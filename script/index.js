@@ -22,7 +22,7 @@ const displayLevelWords = (words) => {
         <div class=" col-span-full">
             <img class="mx-auto" src="assets/alert-error.png" alt="">
             <p class="text-gray-500 font-bangla mb-3 text-center">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-            <h1 class="font-bangla text-4xl font-semibold">এনেক্সট Lesson এ যান</h1>
+            <h1 class="font-bangla text-4xl font-semibold">অন্য Lesson এ যান</h1>
         </div>`
 
         return;
@@ -33,9 +33,9 @@ const displayLevelWords = (words) => {
         card.innerHTML = `
 
         <div class="bg-white text-center py-20 px-5 rounded-sm shadow-sm space-y-4">
-            <h1 class="text-3xl font-bold">${word.word}</h1>
+            <h1 class="text-3xl font-bold">${word.word ? word.word : "শব্দ পাওয়া যায়নি"}</h1>
             <p>Meaning /Pronounciation</p>
-            <h1 class="font-bangla text-3xl text-gray-900 font-bold">"${word.meaning} / ${word.pronunciation}"</h1>
+            <h1 class="font-bangla text-3xl text-gray-900 font-bold">"${word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"} / ${word.pronunciation ? word.pronunciation : "pronunciation পাওয়া যায়নি"}"</h1>
 
             <div class="flex justify-between items-center">
                 <button class="bg-[#1A91FF10] hover:bg-[#1A91FF80]   px-3 py-2 rounded-sm cursor-pointer"><i class="fa-solid fa-circle-info"></i></button>
